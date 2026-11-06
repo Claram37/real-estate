@@ -6,7 +6,8 @@ type SectionProps = ComponentProps<"section"> & {
   fullBleed?: boolean;
 };
 
-// Pass className="bg-white" for the white sections (Property Types).
+// The page is white. Pass className="bg-surface" for the two light-grey
+// sections (Featured Properties and Testimonials).
 const Section = ({
   fullBleed = false,
   className,

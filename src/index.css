@@ -14,7 +14,7 @@
     --body: #555555;          /* paragraphs, subtitles, footer links */
     --subtle: #6b7280;        /* listing-card name and location */
     --placeholder: #8c95a4;   /* search-field placeholders */
-    --surface: #f9fafb;       /* page background, category circles, heart button, hero text */
+    --surface: #f9fafb;       /* Featured & Testimonials backgrounds, category circles, heart button, hero text */
     --grey-2: #dcdcdc;        /* empty rating stars (Figma "Grey 2") */
     --grey-3: #f8f8f8;        /* testimonial cards (Figma "Grey 3") */
     --tint-blue: #e1f0ff;     /* filter-pill border, "Verified Listings" icon chip */
@@ -22,7 +22,7 @@
     --tint-sky: #f0faff;      /* "Transparent Terms" icon chip */
     --star: #4ea62f;          /* rating stars and quote marks (Figma "Primary colour") */
 
-    --background: var(--surface);
+    --background: oklch(1 0 0);
     --foreground: var(--navy);
     --card: oklch(1 0 0);
     --card-foreground: var(--navy);
