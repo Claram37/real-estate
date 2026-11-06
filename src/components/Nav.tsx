@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, focusRing } from "@/lib/utils";
 import Container from "./Container";
 import logo from "@/assets/Images/logo.png";
 import avatar from "@/assets/Images/avatar.png";
@@ -11,9 +11,6 @@ const links = [
 ];
 
 const currentHref = "/";
-
-const focusRing =
-  "rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy";
 
 const Nav = () => {
   return (

@@ -30,8 +30,6 @@ const typeOptions = propertyTypes.map(({ value, label }) => ({ value, label }));
 const fieldClass =
   "h-9.5 w-full rounded-md border border-input bg-white text-sm/5 text-navy focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
 
-const iconProps = { strokeWidth: 1.5, absoluteStrokeWidth: true } as const;
-
 type SelectFieldProps = {
   id: string;
   label: string;
@@ -56,11 +54,7 @@ const SelectField = ({
       <label htmlFor={id} className="sr-only">
         {label}
       </label>
-      <Icon
-        aria-hidden
-        className="pointer-events-none absolute top-1/2 left-3 size-4.5 -translate-y-1/2 text-slate"
-        {...iconProps}
-      />
+      <Icon className="pointer-events-none absolute top-1/2 left-3 size-4.5 -translate-y-1/2 text-slate" />
       <select
         id={id}
         value={value}
@@ -78,11 +72,7 @@ const SelectField = ({
           </option>
         ))}
       </select>
-      <ChevronDown
-        aria-hidden
-        className="pointer-events-none absolute top-1/2 right-3 size-4.5 -translate-y-1/2 text-slate"
-        {...iconProps}
-      />
+      <ChevronDown className="pointer-events-none absolute top-1/2 right-3 size-4.5 -translate-y-1/2 text-slate" />
     </div>
   );
 };

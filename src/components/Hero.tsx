@@ -13,10 +13,10 @@ const Hero = () => {
         priority
       >
         <div className="flex flex-col items-center gap-4 text-center text-surface">
-          <h1 className="font-heading font-bold text-[64px]/[1.1]">
+          <h1 className="font-heading font-bold text-[64px]">
             Find Your Dream Home with Ease.
           </h1>
-          <p className="text-2xl/normal max-w-208">
+          <p className="text-2xl max-w-208">
             Discover verified rentals and homes for sale in top neighborhoods
             with zero hidden fees and transparent pricing.
           </p>

@@ -19,15 +19,15 @@ export type PropertyTypeValue =
 export interface PropertyType {
   value: PropertyTypeValue;
   label: string;
-  // Same Lucide icons as Figma. Draw them at 32px with a 1.5px line:
-  // className="size-8" strokeWidth={1.5} absoluteStrokeWidth
+  // Same Lucide icons as Figma, drawn at 32px (size-8). The 1.5px line
+  // comes from the LucideProvider in main.tsx.
   icon: LucideIcon;
 }
 
 export const propertyTypes: PropertyType[] = [
-  { value: "apartments", label: "Apartments", icon: Building },
+  { value: "apartments", label: "Apartments", icon: BuildingComplex },
   { value: "villas", label: "Villas", icon: House },
-  { value: "offices", label: "Offices", icon: BuildingComplex },
+  { value: "offices", label: "Offices", icon: Building },
   { value: "plots", label: "Plots", icon: LandPlot },
   { value: "commercial", label: "Commercial", icon: Store },
   { value: "townhouses", label: "Townhouses", icon: Dome },
