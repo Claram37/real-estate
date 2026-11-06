@@ -28,6 +28,8 @@ const buttonVariants = cva(
         "icon-xs": "size-5 rounded-sm [&_svg:not([class*='size-'])]:size-2.5",
         "icon-sm": "size-6 [&_svg:not([class*='size-'])]:size-3",
         "icon-lg": "size-8 [&_svg:not([class*='size-'])]:size-4",
+        // The design's yellow Search / Explore Listings button
+        cta: "h-9.5 gap-1.5 px-9 text-sm/normal [&_svg:not([class*='size-'])]:size-4.5",
       },
     },
     defaultVariants: {
