@@ -1,19 +1,15 @@
-import { useState } from "react";
 import { ArrowUpRight, Bath, Bed, Expand, Heart } from "lucide-react";
 import type { Listing } from "@/data/listings";
-import { cn, focusRing } from "@/lib/utils";
+import { cn, focusRing, formatPrice } from "@/lib/utils";
 import PhotoPanel from "./PhotoPanel";
 
-// Short US-dollar prices: 500000 → "$500K", 2400000 → "$2.4M".
-const priceFormat = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  notation: "compact",
-});
+type ListingCardProps = {
+  listing: Listing;
+  saved: boolean;
+  onToggleSaved: () => void;
+};
 
-const ListingCard = ({ listing }: { listing: Listing }) => {
-  const [saved, setSaved] = useState(false);
-
+const ListingCard = ({ listing, saved, onToggleSaved }: ListingCardProps) => {
   const stats = [
     { icon: Expand, value: listing.area, unit: "sq ft" },
     { icon: Bed, value: listing.beds, unit: listing.beds === 1 ? "bed" : "beds" },
@@ -34,7 +30,7 @@ const ListingCard = ({ listing }: { listing: Listing }) => {
         type="button"
         aria-pressed={saved}
         aria-label={`Save ${listing.name}`}
-        onClick={() => setSaved((current) => !current)}
+        onClick={onToggleSaved}
         className={cn(
           focusRing,
           "self-end cursor-pointer rounded-full bg-surface p-1 text-slate",
@@ -46,7 +42,7 @@ const ListingCard = ({ listing }: { listing: Listing }) => {
       <div className="flex flex-col gap-6 rounded-md bg-white p-4">
         <div className="flex items-center justify-between">
           <p className="text-xl/normal font-semibold text-navy">
-            {priceFormat.format(listing.price)}
+            {formatPrice(listing.price)}
             {listing.category === "rent" && (
               <span className="text-sm font-normal text-subtle">/mo</span>
             )}

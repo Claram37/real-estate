@@ -1,9 +1,14 @@
+import type { SearchFilters } from "@/lib/filters";
 import PhotoPanel from "./PhotoPanel";
 import SearchPanel from "./SearchPanel";
 import Section from "./Section";
 import hero from "@/assets/Images/hero.jpg";
 
-const Hero = () => {
+type HeroProps = {
+  onSearch?: (filters: SearchFilters) => void;
+};
+
+const Hero = ({ onSearch }: HeroProps) => {
   return (
     <Section className="py-0">
       <PhotoPanel
@@ -21,7 +26,7 @@ const Hero = () => {
             with zero hidden fees and transparent pricing.
           </p>
         </div>
-        <SearchPanel />
+        <SearchPanel onSearch={onSearch} />
       </PhotoPanel>
     </Section>
   );
