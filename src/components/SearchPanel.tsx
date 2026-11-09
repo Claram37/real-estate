@@ -7,16 +7,10 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import type { SearchFilters } from "@/lib/filters";
 import { Button } from "./ui/button";
 import { listings } from "@/data/listings";
-import { propertyTypes, type PropertyTypeValue } from "@/data/propertyTypes";
-
-export interface SearchFilters {
-  location: string;
-  type: PropertyTypeValue | "";
-  minPrice: number | null;
-  maxPrice: number | null;
-}
+import { propertyTypes } from "@/data/propertyTypes";
 
 // Every location that has a listing, A to Z.
 const locations = [...new Set(listings.map((listing) => listing.location))]

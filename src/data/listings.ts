@@ -8,6 +8,13 @@ import type { PropertyTypeValue } from "./propertyTypes";
 
 export type ListingCategory = "buy" | "rent" | "luxury";
 
+// The Buy / Rent / Luxury tabs, in order.
+export const listingCategories: { value: ListingCategory; label: string }[] = [
+  { value: "buy", label: "Buy" },
+  { value: "rent", label: "Rent" },
+  { value: "luxury", label: "Luxury" },
+];
+
 export interface Listing {
   id: number;
   category: ListingCategory;

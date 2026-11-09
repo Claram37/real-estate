@@ -1,16 +1,10 @@
-import type { ListingCategory } from "@/data/listings";
+import { listingCategories, type ListingCategory } from "@/data/listings";
 import { cn, focusRing } from "@/lib/utils";
 
 interface CategoryFilterProps {
   value: ListingCategory;
   onChange: (value: ListingCategory) => void;
 }
-
-const options: { value: ListingCategory; label: string }[] = [
-  { value: "buy", label: "Buy" },
-  { value: "rent", label: "Rent" },
-  { value: "luxury", label: "Luxury" },
-];
 
 // The Buy / Rent / Luxury pills. The chosen one gets a white background.
 const CategoryFilter = ({ value, onChange }: CategoryFilterProps) => {
@@ -20,7 +14,7 @@ const CategoryFilter = ({ value, onChange }: CategoryFilterProps) => {
       aria-label="Listing type"
       className="inline-flex gap-2 rounded-panel border border-tint-blue p-2"
     >
-      {options.map((option) => {
+      {listingCategories.map((option) => {
         const isActive = option.value === value;
 
         return (
