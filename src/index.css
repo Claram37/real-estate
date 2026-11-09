@@ -165,4 +165,10 @@
   html {
     @apply font-sans;
     }
+  /* Glide to #links and search results, unless the visitor asked for less motion */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
 }
