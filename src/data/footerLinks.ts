@@ -1,6 +1,10 @@
+import type { ListingCategory } from "./listings";
+
 export interface FooterLink {
   label: string;
   href: string;
+  // Opens this tab of Featured Properties, like the header's Buy and Rent.
+  category?: ListingCategory;
 }
 
 export interface FooterLinkGroup {
@@ -13,7 +17,7 @@ export const footerLinks: FooterLinkGroup[] = [
   {
     title: "For Tenants",
     links: [
-      { label: "Find Rentals", href: "#featured" },
+      { label: "Find Rentals", href: "#featured", category: "rent" },
       { label: "Rental Application Guide", href: "#" },
       { label: "Tenant Rights & Resources", href: "#" },
       { label: "Rent Payment Protection", href: "#" },
@@ -23,7 +27,7 @@ export const footerLinks: FooterLinkGroup[] = [
   {
     title: "For Buyers",
     links: [
-      { label: "Homes for Sale", href: "#featured" },
+      { label: "Homes for Sale", href: "#featured", category: "buy" },
       { label: "Mortgage Calculator", href: "#" },
       { label: "First-Time Homebuyer Guide", href: "#" },
       { label: "Home Inspection Checklist", href: "#" },

@@ -29,9 +29,16 @@ function App() {
     setCategory(bestCategory(next, category));
   };
 
+  // The Buy and Rent links in the header and footer show that whole tab, so
+  // any search filters are cleared. The links scroll down by themselves.
+  const showCategory = (next: ListingCategory) => {
+    setFilters(noFilters);
+    setCategory(next);
+  };
+
   return (
     <>
-      <Nav />
+      <Nav onSelectCategory={showCategory} />
       <main className="mt-12">
         <Hero
           onSearch={(next) => {
@@ -53,7 +60,7 @@ function App() {
         <Testimonials />
         <CtaBanner />
       </main>
-      <Footer />
+      <Footer onSelectCategory={showCategory} />
     </>
   );
 }

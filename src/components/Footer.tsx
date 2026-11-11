@@ -1,9 +1,14 @@
 import logo from "@/assets/Images/logo.png";
 import { footerLinks } from "@/data/footerLinks";
+import type { ListingCategory } from "@/data/listings";
 import { cn, focusRing } from "@/lib/utils";
 import Container from "./Container";
 
-const Footer = () => {
+type FooterProps = {
+  onSelectCategory?: (category: ListingCategory) => void;
+};
+
+const Footer = ({ onSelectCategory }: FooterProps) => {
   return (
     // The header's Contact link points here.
     <footer id="contact" className="py-16">
@@ -32,6 +37,9 @@ const Footer = () => {
                     <li key={link.label}>
                       <a
                         href={link.href}
+                        onClick={() =>
+                          link.category && onSelectCategory?.(link.category)
+                        }
                         className={cn(
                           "text-base/normal text-body transition-colors hover:text-navy",
                           focusRing,

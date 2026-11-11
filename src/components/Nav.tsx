@@ -1,18 +1,30 @@
 import { cn, focusRing } from "@/lib/utils";
+import type { ListingCategory } from "@/data/listings";
 import Container from "./Container";
 import logo from "@/assets/Images/logo.png";
 import avatar from "@/assets/Images/avatar.png";
 
-const links = [
+type NavLink = {
+  label: string;
+  href: string;
+  // Buy and Rent scroll to Featured Properties and open that tab.
+  category?: ListingCategory;
+};
+
+const links: NavLink[] = [
   { label: "Home", href: "/" },
-  { label: "Buy", href: "#buy" },
-  { label: "Rent", href: "#rent" },
+  { label: "Buy", href: "#featured", category: "buy" },
+  { label: "Rent", href: "#featured", category: "rent" },
   { label: "Contact", href: "#contact" },
 ];
 
 const currentHref = "/";
 
-const Nav = () => {
+type NavProps = {
+  onSelectCategory?: (category: ListingCategory) => void;
+};
+
+const Nav = ({ onSelectCategory }: NavProps) => {
   return (
     <header className="pt-6">
       <Container className="grid h-16 grid-cols-[1fr_auto_1fr] items-center">
@@ -25,9 +37,13 @@ const Nav = () => {
             {links.map((link) => {
               const isCurrent = link.href === currentHref;
               return (
-                <li key={link.href}>
+                <li key={link.label}>
                   <a
                     href={link.href}
+                    // The link still scrolls down by itself; this only picks the tab.
+                    onClick={() =>
+                      link.category && onSelectCategory?.(link.category)
+                    }
                     aria-current={isCurrent ? "page" : undefined}
                     className={cn(
                       "block px-4 py-2 text-xl/normal tracking-nav text-slate transition-colors hover:text-navy",
