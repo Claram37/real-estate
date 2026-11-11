@@ -54,4 +54,6 @@ function Button({
   )
 }
 
+// buttonVariants is shared so links can look like buttons (see CtaBanner).
+// eslint-disable-next-line react-refresh/only-export-components
 export { Button, buttonVariants }
