@@ -57,7 +57,9 @@ const Footer = ({ onSelectCategory }: FooterProps) => {
 
         <div className="flex flex-col gap-2">
           <hr />
-          <p className="text-sm/normal text-body/70">
+          {/* text-subtle rather than a faded text-body, which was too faint
+              to read (3.5:1 on white) */}
+          <p className="text-sm/normal text-subtle">
             © {new Date().getFullYear()} Real Estate. All rights reserved.
           </p>
         </div>

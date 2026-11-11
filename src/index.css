@@ -13,7 +13,9 @@
   --slate: #495057; /* nav links, filter pills */
   --body: #555555; /* paragraphs, subtitles, footer links */
   --subtle: #6b7280; /* listing-card name and location */
-  --placeholder: #8c95a4; /* search-field placeholders */
+  /* search-field placeholders. Figma's #8c95a4 is too faint to read
+     (3.0:1 on white); this is the lightest shade of it that passes 4.5:1. */
+  --placeholder: #6f7682;
   --surface: #f9fafb; /* Featured & Testimonials backgrounds, category circles, heart button, hero text */
   --grey-2: #dcdcdc; /* empty rating stars (Figma "Grey 2") */
   --grey-3: #f8f8f8; /* testimonial cards (Figma "Grey 3") */
