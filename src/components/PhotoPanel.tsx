@@ -3,6 +3,10 @@ import { cn } from "@/lib/utils";
 
 type PhotoPanelProps = ComponentProps<"div"> & {
   src: string;
+  // Optional: the same photo at other widths ("small.jpg 1376w, big.jpg
+  // 2752w") and how wide it shows, so phones can download the smaller one.
+  srcSet?: string;
+  sizes?: string;
   alt?: string;
   overlay: string;
   priority?: boolean;
@@ -13,6 +17,8 @@ type PhotoPanelProps = ComponentProps<"div"> & {
 // can lay out the children directly, e.g. "flex flex-col justify-between p-4".
 const PhotoPanel = ({
   src,
+  srcSet,
+  sizes,
   alt = "",
   overlay,
   priority = false,
@@ -27,6 +33,8 @@ const PhotoPanel = ({
     >
       <img
         src={src}
+        srcSet={srcSet}
+        sizes={sizes}
         alt={alt}
         fetchPriority={priority ? "high" : undefined}
         loading={priority ? undefined : "lazy"}

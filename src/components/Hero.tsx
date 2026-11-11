@@ -3,6 +3,7 @@ import PhotoPanel from "./PhotoPanel";
 import SearchPanel from "./SearchPanel";
 import Section from "./Section";
 import hero from "@/assets/Images/hero.jpg";
+import heroSmall from "@/assets/Images/hero-1376.jpg";
 
 type HeroProps = {
   onSearch?: (filters: SearchFilters) => void;
@@ -16,6 +17,10 @@ const Hero = ({ onSearch }: HeroProps) => {
         // than 600px, so the panel grows instead of cutting them off.
         className="min-h-150 rounded-panel flex flex-col items-center justify-center gap-8 py-12 px-4 sm:gap-12 sm:py-20"
         src={hero}
+        // The panel is full width, up to 1376px. Phones and normal screens
+        // load the 1376px copy; sharp (2x) laptop screens load the big one.
+        srcSet={`${heroSmall} 1376w, ${hero} 2752w`}
+        sizes="(min-width: 1440px) 1376px, 100vw"
         overlay="bg-black/50"
         priority
       >

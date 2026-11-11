@@ -2,13 +2,21 @@ import { ArrowRight } from "lucide-react";
 import PhotoPanel from "./PhotoPanel";
 import Section from "./Section";
 import cta from "@/assets/Images/cta.jpg";
+import ctaSmall from "@/assets/Images/cta-1376.jpg";
 import { buttonVariants } from "./ui/button";
 import { cn, focusRingOnPhoto } from "@/lib/utils";
 
 const CtaBanner = () => {
   return (
     <Section aria-labelledby="cta-heading">
-      <PhotoPanel src={cta} overlay="bg-black/40" className="rounded-panel">
+      {/* Same idea as the hero: smaller copy for phones and normal screens */}
+      <PhotoPanel
+        src={cta}
+        srcSet={`${ctaSmall} 1376w, ${cta} 2752w`}
+        sizes="(min-width: 1440px) 1376px, 100vw"
+        overlay="bg-black/40"
+        className="rounded-panel"
+      >
         <div className="flex flex-col items-center rounded-panel bg-black/13 px-4 py-16 backdrop-blur-[2px] sm:py-24 lg:py-40">
           <div className="flex w-full max-w-181.5 flex-col items-center gap-6 text-center">
             <div className="flex flex-col items-center gap-4">
