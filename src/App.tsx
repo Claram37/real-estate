@@ -6,6 +6,7 @@ import FeaturedProperties from "./components/FeaturedProperties";
 import WhyTrustUs from "./components/WhyTrustUs";
 import type { ListingCategory } from "@/data/listings";
 import { bestCategory, noFilters, type SearchFilters } from "@/lib/filters";
+import CtaBanner from "./components/CtaBanner";
 
 // Scrolls to the results and moves keyboard focus there, so the next Tab
 // press continues from the cards, not from the search button up top.
@@ -47,7 +48,8 @@ function App() {
           onClearFilters={() => setFilters(noFilters)}
         />
         <WhyTrustUs />
-        {/* Still to come, in order: Testimonials, CtaBanner */}
+        {/* Testimonials goes here, above the CTA banner */}
+        <CtaBanner />
       </main>
       {/* Footer goes here */}
     </>

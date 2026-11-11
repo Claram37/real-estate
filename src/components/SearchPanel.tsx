@@ -6,7 +6,7 @@ import {
   MapPinHouse,
   type LucideIcon,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, focusRingOnPhoto } from "@/lib/utils";
 import type { SearchFilters } from "@/lib/filters";
 import { Button } from "./ui/button";
 import { listings } from "@/data/listings";
@@ -172,7 +172,7 @@ const SearchPanel = ({ onSearch }: SearchPanelProps) => {
           onChange={setMaxPrice}
           min={minPrice === "" ? 0 : Number(minPrice)}
         />
-        <Button type="submit" size="cta">
+        <Button type="submit" size="cta" className={focusRingOnPhoto}>
           Search <ArrowRight />
         </Button>
       </div>

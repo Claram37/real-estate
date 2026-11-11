@@ -4,6 +4,11 @@ export { cn } from "cn"
 export const focusRing =
   "rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy"
 
+// White outline for yellow buttons that sit on a photo, where navy wouldn't
+// show. outline-solid is needed because shadcn's button style sets outline-none.
+export const focusRingOnPhoto =
+  "focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+
 const priceFormat = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
