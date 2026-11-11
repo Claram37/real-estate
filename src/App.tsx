@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import Hero from "./components/Hero";
 import PropertyTypes from "./components/PropertyTypes";
 import FeaturedProperties from "./components/FeaturedProperties";
+import WhyTrustUs from "./components/WhyTrustUs";
 import type { ListingCategory } from "@/data/listings";
 import { bestCategory, noFilters, type SearchFilters } from "@/lib/filters";
 
@@ -45,8 +46,8 @@ function App() {
           filters={filters}
           onClearFilters={() => setFilters(noFilters)}
         />
-        {/* Step 4 sections go here, in order: Hero, PropertyTypes,
-            FeaturedProperties, WhyTrustUs, Testimonials, CtaBanner */}
+        <WhyTrustUs />
+        {/* Still to come, in order: Testimonials, CtaBanner */}
       </main>
       {/* Footer goes here */}
     </>
