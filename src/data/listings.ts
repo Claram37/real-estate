@@ -4,6 +4,10 @@ import listing3 from "@/assets/Images/listing-3.jpg";
 import listing4 from "@/assets/Images/listing-4.jpg";
 import listing5 from "@/assets/Images/listing-5.jpg";
 import hero from "@/assets/Images/hero.jpg";
+// Free Unsplash photos: z7TfgdFZ8DY, Qal7KiJ-ErQ and PEuJ_3K9dxY
+import office from "@/assets/Images/office.jpg";
+import plot from "@/assets/Images/plot.jpg";
+import commercial from "@/assets/Images/commercial.jpg";
 import type { PropertyTypeValue } from "./propertyTypes";
 
 export type ListingCategory = "buy" | "rent" | "luxury";
@@ -24,9 +28,12 @@ export interface Listing {
   image: string;
   // US dollars: the sale price for "buy" and "luxury", the monthly rent for "rent".
   price: number;
+  // Square feet
   area: number;
-  beds: number;
-  baths: number;
+  // Homes only: offices, plots and commercial listings leave these out,
+  // and their cards show just the area.
+  beds?: number;
+  baths?: number;
 }
 
 export const listings: Listing[] = [
@@ -103,6 +110,36 @@ export const listings: Listing[] = [
     beds: 4,
     baths: 3,
   },
+  {
+    id: 19,
+    category: "buy",
+    type: "offices",
+    name: "Upper Hill Office Suite",
+    location: "Upper Hill, Nairobi",
+    image: office,
+    price: 450_000,
+    area: 3800,
+  },
+  {
+    id: 20,
+    category: "buy",
+    type: "plots",
+    name: "Kitengela Quarter-Acre Plot",
+    location: "Kitengela, Kajiado",
+    image: plot,
+    price: 60_000,
+    area: 10_890,
+  },
+  {
+    id: 21,
+    category: "buy",
+    type: "commercial",
+    name: "Mombasa Road Business Unit",
+    location: "Mombasa Road, Nairobi",
+    image: commercial,
+    price: 780_000,
+    area: 9500,
+  },
 
   // Rent (monthly)
   {
@@ -177,6 +214,36 @@ export const listings: Listing[] = [
     beds: 3,
     baths: 3,
   },
+  {
+    id: 22,
+    category: "rent",
+    type: "offices",
+    name: "Westlands Office Floor",
+    location: "Westlands, Nairobi",
+    image: office,
+    price: 4_800,
+    area: 4200,
+  },
+  {
+    id: 23,
+    category: "rent",
+    type: "plots",
+    name: "Ruiru Half-Acre Yard",
+    location: "Ruiru, Kiambu",
+    image: plot,
+    price: 900,
+    area: 21_780,
+  },
+  {
+    id: 24,
+    category: "rent",
+    type: "commercial",
+    name: "Ngong Road Showroom",
+    location: "Ngong Road, Nairobi",
+    image: commercial,
+    price: 3_600,
+    area: 5200,
+  },
 
   // Luxury
   {
@@ -250,5 +317,35 @@ export const listings: Listing[] = [
     area: 4100,
     beds: 4,
     baths: 4,
+  },
+  {
+    id: 25,
+    category: "luxury",
+    type: "offices",
+    name: "Riverside Drive Headquarters",
+    location: "Riverside, Nairobi",
+    image: office,
+    price: 4_200_000,
+    area: 18_000,
+  },
+  {
+    id: 26,
+    category: "luxury",
+    type: "plots",
+    name: "Muthaiga Half-Acre Plot",
+    location: "Muthaiga, Nairobi",
+    image: plot,
+    price: 1_200_000,
+    area: 21_780,
+  },
+  {
+    id: 27,
+    category: "luxury",
+    type: "commercial",
+    name: "Ruaka Retail Centre",
+    location: "Ruaka, Kiambu",
+    image: commercial,
+    price: 2_600_000,
+    area: 24_000,
   },
 ];

@@ -1,4 +1,11 @@
-import { ArrowUpRight, Bath, Bed, Expand, Heart } from "lucide-react";
+import {
+  ArrowUpRight,
+  Bath,
+  Bed,
+  Expand,
+  Heart,
+  type LucideIcon,
+} from "lucide-react";
 import type { Listing } from "@/data/listings";
 import { cn, focusRing, formatPrice } from "@/lib/utils";
 import PhotoPanel from "./PhotoPanel";
@@ -10,15 +17,24 @@ type ListingCardProps = {
 };
 
 const ListingCard = ({ listing, saved, onToggleSaved }: ListingCardProps) => {
-  const stats = [
+  // Every card shows the area; homes also show beds and baths.
+  const stats: { icon: LucideIcon; value: number; unit: string }[] = [
     { icon: Expand, value: listing.area, unit: "sq ft" },
-    { icon: Bed, value: listing.beds, unit: listing.beds === 1 ? "bed" : "beds" },
-    {
+  ];
+  if (listing.beds !== undefined) {
+    stats.push({
+      icon: Bed,
+      value: listing.beds,
+      unit: listing.beds === 1 ? "bed" : "beds",
+    });
+  }
+  if (listing.baths !== undefined) {
+    stats.push({
       icon: Bath,
       value: listing.baths,
       unit: listing.baths === 1 ? "bath" : "baths",
-    },
-  ];
+    });
+  }
 
   return (
     <PhotoPanel
