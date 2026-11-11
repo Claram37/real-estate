@@ -12,16 +12,18 @@ const Hero = ({ onSearch }: HeroProps) => {
   return (
     <Section className="py-0">
       <PhotoPanel
-        className="h-150 rounded-panel flex flex-col items-center justify-center gap-12 py-20 px-4"
+        // min-h rather than h: on phones the stacked search fields need more
+        // than 600px, so the panel grows instead of cutting them off.
+        className="min-h-150 rounded-panel flex flex-col items-center justify-center gap-8 py-12 px-4 sm:gap-12 sm:py-20"
         src={hero}
         overlay="bg-black/50"
         priority
       >
         <div className="flex flex-col items-center gap-4 text-center text-surface">
-          <h1 className="font-heading font-bold text-[64px]">
+          <h1 className="font-heading font-bold text-4xl/[1.1] sm:text-5xl/[1.1] lg:text-[64px]/[1.1]">
             Find Your Dream Home with Ease.
           </h1>
-          <p className="text-2xl max-w-208">
+          <p className="text-lg/normal max-w-208 sm:text-2xl/normal">
             Discover verified rentals and homes for sale in top neighborhoods
             with zero hidden fees and transparent pricing.
           </p>

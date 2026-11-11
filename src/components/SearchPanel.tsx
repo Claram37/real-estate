@@ -126,7 +126,7 @@ const SearchPanel = ({ onSearch }: SearchPanelProps) => {
   return (
     <form
       role="search"
-      className="w-full max-w-301 rounded-md border-2 border-white/13 bg-white/16 p-8 backdrop-blur-xs"
+      className="w-full max-w-301 rounded-md border-2 border-white/13 bg-white/16 p-4 backdrop-blur-xs sm:p-8"
       onSubmit={(event) => {
         event.preventDefault();
         onSearch?.({
@@ -137,7 +137,9 @@ const SearchPanel = ({ onSearch }: SearchPanelProps) => {
         });
       }}
     >
-      <div className="flex gap-4">
+      {/* Stacked on phones, two per row on tablets and small laptops, one row
+          from xl (narrower than that, the dropdown text gets cut off) */}
+      <div className="grid gap-4 sm:grid-cols-2 xl:flex">
         <SelectField
           id="search-location"
           label="Location"
@@ -172,7 +174,11 @@ const SearchPanel = ({ onSearch }: SearchPanelProps) => {
           onChange={setMaxPrice}
           min={minPrice === "" ? 0 : Number(minPrice)}
         />
-        <Button type="submit" size="cta" className={focusRingOnPhoto}>
+        <Button
+          type="submit"
+          size="cta"
+          className={cn(focusRingOnPhoto, "sm:col-span-2")}
+        >
           Search <ArrowRight />
         </Button>
       </div>
