@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import PropertyTypes from "./components/PropertyTypes";
 import FeaturedProperties from "./components/FeaturedProperties";
 import WhyTrustUs from "./components/WhyTrustUs";
+import Testimonials from "./components/Testimonials";
 import type { ListingCategory } from "@/data/listings";
 import { bestCategory, noFilters, type SearchFilters } from "@/lib/filters";
 import CtaBanner from "./components/CtaBanner";
@@ -49,7 +50,7 @@ function App() {
           onClearFilters={() => setFilters(noFilters)}
         />
         <WhyTrustUs />
-        {/* Testimonials goes here, above the CTA banner */}
+        <Testimonials />
         <CtaBanner />
       </main>
       <Footer />

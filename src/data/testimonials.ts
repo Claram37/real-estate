@@ -22,7 +22,7 @@ export const testimonials: Testimonial[] = [
     avatar: johnWalker,
     rating: 5,
     quote:
-      "Every photo matched the apartment I moved into. No surprises on viewing day, and no agent fees either. Highly recommend!",
+      "Every photo matched the flat I moved into. No surprises on viewing day, and no agent fees either. Highly recommend!",
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ export const testimonials: Testimonial[] = [
     avatar: harryMaguire,
     rating: 4.5,
     quote:
-      "We found our family home in three weeks. The mortgage estimate on the listing was spot on, which made budgeting easy.",
+      "We found our family home in three weeks. The mortgage estimate on the listing was spot on, so budgeting was easy.",
   },
   {
     id: 3,
