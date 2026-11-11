@@ -24,7 +24,7 @@ const Testimonials = () => {
         />
       </Container>
 
-      <div className="mt-15 flex flex-col gap-16">
+      <div className="mt-10 flex flex-col gap-8 sm:mt-15 sm:gap-16">
         {rows.map((row, index) => (
           <div
             key={index}
@@ -43,7 +43,7 @@ const Testimonials = () => {
                   <TestimonialCard
                     key={testimonial.id}
                     testimonial={testimonial}
-                    className="mr-10"
+                    className="mr-4 sm:mr-10"
                   />
                 ))}
               </div>

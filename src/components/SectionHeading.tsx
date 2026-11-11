@@ -19,7 +19,10 @@ const SectionHeading = ({
     <div
       className={cn("flex flex-col items-center gap-4 text-center", className)}
     >
-      <h2 id={id} className="font-heading text-5xl/[1.2] font-bold text-navy">
+      <h2
+        id={id}
+        className="font-heading text-4xl/[1.2] font-bold text-navy sm:text-5xl/[1.2]"
+      >
         {title}
       </h2>
       {subtitle && <p className="text-xl/normal text-body">{subtitle}</p>}
