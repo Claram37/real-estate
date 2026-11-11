@@ -95,6 +95,15 @@
 }
 
 @theme inline {
+  /* Testimonial rows: 3900px every 80s, about 50px a second */
+  --animate-marquee: marquee 80s linear infinite;
+  --animate-marquee-reverse: marquee 80s linear infinite reverse;
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
   --font-sans: "Inter Variable", sans-serif;
   --font-heading: "Nunito Sans Variable", sans-serif;
 

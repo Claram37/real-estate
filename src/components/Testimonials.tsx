@@ -7,6 +7,8 @@ import TestimonialCard from "./TestimonialCard";
 
 const rows = [testimonials.slice(0, 3), testimonials.slice(3)];
 
+const copies = [0, 1, 2, 3];
+
 const Testimonials = () => {
   return (
     <Section
@@ -24,13 +26,27 @@ const Testimonials = () => {
 
       <div className="mt-15 flex flex-col gap-16">
         {rows.map((row, index) => (
-          <div key={index} className={cn("flex", index === 1 && "-ml-41.25")}>
-            {row.map((testimonial) => (
-              <TestimonialCard
-                key={testimonial.id}
-                testimonial={testimonial}
-                className="mr-10"
-              />
+          <div
+            key={index}
+            className={cn(
+              "flex w-max animate-marquee hover:paused motion-reduce:animate-none",
+              index === 1 && "-ml-41.25 animate-marquee-reverse",
+            )}
+          >
+            {copies.map((copy) => (
+              <div
+                key={copy}
+                aria-hidden={copy > 0 || undefined}
+                className="flex"
+              >
+                {row.map((testimonial) => (
+                  <TestimonialCard
+                    key={testimonial.id}
+                    testimonial={testimonial}
+                    className="mr-10"
+                  />
+                ))}
+              </div>
             ))}
           </div>
         ))}
